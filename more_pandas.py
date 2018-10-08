@@ -6,6 +6,7 @@ def diff_in_days(df):
     Write a function that takes a pandas DataFrame with two columns "time_1"
     and "time_2" of UNIX timestamps given in seconds (you will need to specify
     the unit if using pd.to_datetime).
+
     The function should return a new dataFrame with one single column
     "difference_days" consisting of the absolute difference in days between
     time_1 and time_2.
@@ -25,6 +26,11 @@ def diff_in_days(df):
     Note:
     https://en.wikipedia.org/wiki/Unix_time,
     https://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_datetime.html
+
+    Hint:
+    Take special care on how negative timedeltas are treated in Python.
+    Getting the number of days directly from a negative timedelta might
+    not give you the result you expect.
 
     :param df: DataFrame with the two columns of timestamps
     :return: new dataframe with differences in days between timestamps
