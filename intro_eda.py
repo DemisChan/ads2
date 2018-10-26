@@ -70,7 +70,7 @@ def feature_cleaner(df, low, high):
 
 def get_feature(df):
     """
-    Take a dataframe where all columns are numerical and not constant.
+    Take a dataframe where all columns are numerical (no NaNs) and not constant.
     One of the column named "CLASS" is either 0 or 1.
 
     Within each class, for each feature compute the ratio (R) of the
@@ -80,8 +80,8 @@ def get_feature(df):
     For each feature you now have two R; R_0 and R_1 where:
         R_0 = (max_class0 - min_class0) / variance_class0
 
-    For each feature, compute the ratio (say K) of the larger R to the smaller R.
-    Return the name of the feature for which this last ratio K is largest.
+    For each column, compute the ratio (say K) of the larger R to the smaller R.
+    Return the name of the column for which this last ratio K is largest.
 
     Test input
            A     B     C   CLASS
@@ -97,7 +97,7 @@ def get_feature(df):
     Expected output: 'C'
 
     :param df:  Input DataFrame (with numerical columns)
-    :returns:   Name of the feature with largest K
+    :returns:   Name of the column with largest K
     """
 
     raise NotImplementedError
