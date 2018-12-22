@@ -5,13 +5,13 @@ def build_sequences(min_value, max_value, sequence_number):
         sequence #2: 50 - 5 * n
         sequence #3: 2 ** n
 
-    Although this exercises can easily be done with list 
-    comprehensions, it can be more efficient to use numpy 
+    Although this exercises can easily be done with list
+    comprehensions, it can be more efficient to use numpy
     (the arange method can be handy here).
 
     Start by generating all 50 first values for the sequence that
     was selected by sequence_number and return a numpy array
-    filtered so that it only contains values in 
+    filtered so that it only contains values in
     [min_value, max_value] (min and max being included)
 
     :param min_value: minimum value to use to filter the arrays
@@ -28,8 +28,8 @@ def moving_averages(x, k):
     Given a numpy vector x of n > k, compute the moving averages
     of length k.  In other words, return a vector z of length
     m = n - k + 1 where z_i = mean([x_i, x_i-1, ..., x_i-k+1])
-    
-    Note that z_i refers to value of z computed from index i 
+
+    Note that z_i refers to value of z computed from index i
     of x, but not z index i. z will be shifted compared to x
     since it cannot be computed for the first k-1 values of x.
 
@@ -52,7 +52,7 @@ def moving_averages(x, k):
 
 def block_matrix(A, B):
     """
-    Given two numpy matrices A and B of arbitrary dimensions, 
+    Given two numpy matrices A and B of arbitrary dimensions,
     return a new numpy matrix of the following form:
         [A,0]
         [0,B]

@@ -16,11 +16,11 @@ def diff_in_days(df):
                time_1      time_2
         0  1456694829  1455845363
 
-    Here we have a single row for which time_1 corresponds to 28/02/2016 and 
+    Here we have a single row for which time_1 corresponds to 28/02/2016 and
     time_2 to 19/02/2016.
 
     Expected output:
-           difference_days    
+           difference_days
         0                9
 
     Note:
@@ -43,7 +43,7 @@ def return_location(df):
     """
     Write a function that takes a pandas DataFrame with one column, locations,
     containing information about a specific location. The info is stored in a string
-    that can be loaded as a json object. 
+    that can be loaded as a json object.
     The function should return a DataFrame with one column, "short_name" that contains the
     value associated with the key "short_name" for each row.
 
@@ -57,7 +57,7 @@ def return_location(df):
 
     Where each value is a string such as:
        '{"short_name": "Detroit, MI", "id": 2391585}'
-    
+
     Expected output:
             short_name
         0  Detroit, MI
@@ -78,10 +78,10 @@ def return_post_codes(df):
     """
     Write a function that takes a pandas DataFrame with one column, text, that
     contains an arbitrary text. The function should extract all post-codes that
-    appear in that text and concatenate them together with " | ". The result is 
-    a new dataframe with a column "postcodes" that contains all concatenated 
-    postcodes. 
-    
+    appear in that text and concatenate them together with " | ". The result is
+    a new dataframe with a column "postcodes" that contains all concatenated
+    postcodes.
+
     Example input:
                                                                             text
     0  Great Doddington, Wellingborough NN29 7TA, UK\nTaylor, Leeds LS14 6JA, UK
