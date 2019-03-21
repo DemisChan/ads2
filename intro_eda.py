@@ -22,8 +22,10 @@ def nan_processor(df, replacement_str):
         been removed
     """
 
-    raise NotImplementedError
-
+    import pandas as pd
+    import numpy as np
+    df.replace(replacement_str, np.nan, inplace=True)
+    return df.drop
 
 def feature_cleaner(df, low, high):
     """
@@ -65,7 +67,13 @@ def feature_cleaner(df, low, high):
                     desired percentile range have been removed
     """
 
-    raise NotImplementedError
+    import pandas as pd
+    import numpy as np
+    df_q = df.quantile([low, high])
+    df1 = df[df > df_q.min()]
+    df2 = df1[df1 < df_q.max()]
+    df2.dropna(inplace=True)
+    return (df2 - df2.mean())/df2.std()
 
 
 def get_feature(df):
@@ -100,7 +108,32 @@ def get_feature(df):
     :returns:   Name of the column with largest K
     """
 
-    raise NotImplementedError
+    import pandas as pd
+    import numpy as np
+
+    max_val = 0
+    results = None
+
+    df_grp_min = df.groupby("CLASS").apply(np.min)[df.columns[:-1]]
+    df_grp_max = df.groupby("CLASS").apply(np.max)[df.columns[:-1]]
+    df_grp_range = df_grp_max - df_grp_min
+    df_grp_var = df.groupby("CLASS").apply(np.var)[df.columns[:-1]]
+
+    df_grp_ratio = df_grp_range/df_grp_var
+
+    df_largest_ratio = df_grp_ratio.apply(np.max) / df_grp_ratio.apply(np.min)
+
+     print (df_largest_ratio)
+     print(np.max(df_largest_ratio))
+     print(type(df_largest_ratio))
+
+    for col in df_largest_ratio.index:
+        if df_largest_ratio[col] > max_val:
+            max_val = df_largest_ratio[col]
+            results = col
+#
+    return results
+
 
 
 def one_hot_encode(label_to_encode, labels):
