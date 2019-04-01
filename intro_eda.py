@@ -21,9 +21,6 @@ def nan_processor(df, replacement_str):
         replaced by np.nan and subsequently all rows containing np.nan have
         been removed
     """
-
-    import pandas as pd
-    import numpy as np
     df.replace(replacement_str, np.nan, inplace=True)
     return df
 
