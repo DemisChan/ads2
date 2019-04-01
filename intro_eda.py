@@ -25,7 +25,7 @@ def nan_processor(df, replacement_str):
     import pandas as pd
     import numpy as np
     df.replace(replacement_str, np.nan, inplace=True)
-    return df.drop
+    return df
 
 def feature_cleaner(df, low, high):
     """
@@ -123,15 +123,14 @@ def get_feature(df):
 
     df_largest_ratio = df_grp_ratio.apply(np.max) / df_grp_ratio.apply(np.min)
 
-     print (df_largest_ratio)
-     print(np.max(df_largest_ratio))
-     print(type(df_largest_ratio))
-
+    #print (df_largest_ratio)
+    #print(np.max(df_largest_ratio))
+    #print(type(df_largest_ratio))
+     
     for col in df_largest_ratio.index:
         if df_largest_ratio[col] > max_val:
             max_val = df_largest_ratio[col]
             results = col
-#
     return results
 
 
