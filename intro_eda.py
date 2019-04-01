@@ -26,6 +26,7 @@ def nan_processor(df, replacement_str):
         been removed
     """
     df.replace(replacement_str, np.nan, inplace=True)
+    df.dropna(inplace=True)
     return df
 
 def feature_cleaner(df, low, high):
