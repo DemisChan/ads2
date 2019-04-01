@@ -66,9 +66,6 @@ def feature_cleaner(df, low, high):
     :returns:       Scaled DataFrame where elements that are outside of the
                     desired percentile range have been removed
     """
-
-    import pandas as pd
-    import numpy as np
     df_q = df.quantile([low, high])
     df1 = df[df > df_q.min()]
     df2 = df1[df1 < df_q.max()]
@@ -107,10 +104,6 @@ def get_feature(df):
     :param df:  Input DataFrame (with numerical columns)
     :returns:   Name of the column with largest K
     """
-
-    import pandas as pd
-    import numpy as np
-
     max_val = 0
     results = None
 
