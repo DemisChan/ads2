@@ -38,7 +38,7 @@ def diff_in_days(df):
     """
 
     temp = (df.time_1-df.time_2)/86400
-    df_new = pd.DataFrame(abs(np.ceil(temp)), columns=['difference_days'], dtype=int)
+    df_new = pd.DataFrame(abs(temp), columns=['difference_days'], dtype=int)
     return df_new
 
 
