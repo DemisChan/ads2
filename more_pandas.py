@@ -36,7 +36,9 @@ def diff_in_days(df):
     :return: new dataframe with differences in days between timestamps
     """
 
-    raise NotImplementedError
+    temp = (df.time_1-df.time_2)//86400
+    df_new = pd.DataFrame(temp, columns=['difference_days'])
+    return df_new
 
 
 def return_location(df):
