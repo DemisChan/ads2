@@ -37,8 +37,8 @@ def diff_in_days(df):
     :return: new dataframe with differences in days between timestamps
     """
 
-    temp = (df.time_1-df.time_2)//86400
-    df_new = pd.DataFrame(abs(temp), columns=['difference_days'])
+    temp = (df.time_1-df.time_2)/86400
+    df_new = pd.DataFrame(abs(np.ceil(temp)), columns=['difference_days'])
     return df_new
 
 
