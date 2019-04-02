@@ -29,6 +29,7 @@ def nan_processor(df, replacement_str):
     df.dropna(inplace=True)
     return df
 
+
 def feature_cleaner(df, low, high):
     """
     Take a dataframe where columns are all numerical and non-constant.
@@ -121,13 +122,11 @@ def get_feature(df):
     # print (df_largest_ratio)
     # print(np.max(df_largest_ratio))
     # print(type(df_largest_ratio))
-     
     for col in df_largest_ratio.index:
         if df_largest_ratio[col] > max_val:
             max_val = df_largest_ratio[col]
             results = col
     return results
-
 
 
 def one_hot_encode(label_to_encode, labels):
@@ -149,5 +148,3 @@ def one_hot_encode(label_to_encode, labels):
     """
 
     raise NotImplementedError
-
-
