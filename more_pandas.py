@@ -73,8 +73,13 @@ def return_location(df):
     :param df: DataFrame with the locations column
     :return: new DataFrame with the short_name column
     """
-
-    raise NotImplementedError
+    values = []
+    column = 'short_name'
+    for i in df.iloc[:, 0]:
+        if column in i.keys():
+            values.append(i[column])
+    df_f = pd.DataFrame(values, columns=[column])
+    return df_f
 
 
 def return_post_codes(df):
