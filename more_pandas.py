@@ -75,8 +75,10 @@ def return_location(df):
     """
     values = []
     column = 'short_name'
-    for i in df.iloc[:, 0]:
+    df = df.iloc[:, 0].apply(js.loads)
+    for i in df:
         if column in i.keys():
+            print(i, i[column])
             values.append(i[column])
     df_f = pd.DataFrame(values, columns=[column])
     return df_f
