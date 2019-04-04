@@ -53,7 +53,8 @@ def moving_averages(x, k):
     z_ar = []
     for i in range(l_x-d_f):
         z_ar.append(np.mean(x[i:k+i]))
-    return z = np.array(z_ar)
+    z = np.array(z_ar)
+    return z
 
 def block_matrix(A, B):
     """
