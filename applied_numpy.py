@@ -47,8 +47,13 @@ def moving_averages(x, k):
     :returns: a numpy array z containing the moving averages.
     """
 
-    raise NotImplementedError
-
+    import numpy as np
+    l_x = len(x)
+    d_f = l_x - k+1
+    z_ar = []
+    for i in range(l_x-d_f):
+        z_ar.append(np.mean(x[i:k+i]))
+    return z = np.array(z_ar)
 
 def block_matrix(A, B):
     """
