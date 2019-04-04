@@ -2,6 +2,7 @@
 import pandas as pd
 import numpy as np
 
+
 def diff_in_days(df):
     """
     Write a function that takes a pandas DataFrame with two columns "time_1"
@@ -130,9 +131,8 @@ def return_post_codes(df):
         z = pat.findall(i)
         if len(z) > 1:
             t.append(sep.join(z))
-        elif len(z)==1:
+        elif len(z) == 1:
             t.append(z.pop())
     df_pc = pd.DataFrame(t, columns=['postcodes'])
     return df_pc
-
 
