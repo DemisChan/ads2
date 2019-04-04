@@ -122,7 +122,17 @@ def return_post_codes(df):
     :param df: a DataFrame with the text column
     :return: new DataFrame with the postcodes column
     """
-
-    raise NotImplementedError
+    import re
+    pat = re.compile('[A-Z0-9]{1,4}\s*?[0-9][A-Z]{2}')
+    t = []
+    sep = " | "
+    for i in df.iloc[:, 0]:
+        z = pat.findall(i)
+        if len(z) > 1:
+            t.append(sep.join(z))
+        elif len(z)==1:
+            t.append(z.pop())
+    df_pc = pd.DataFrame(t, columns=['postcodes'])
+    return df_pc
 
 
