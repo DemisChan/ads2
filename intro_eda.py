@@ -147,4 +147,12 @@ def one_hot_encode(label_to_encode, labels):
     :return: a list of 0s and one 1
     """
 
-    raise NotImplementedError
+    s = label_to_encode
+    l = labels
+    z_t = [ i for i in zip(l, np.zeros_like(l, dtype=int))]
+    z_n = [ j for i, j in zip(l, np.zeros_like(l, dtype=int))] 
+    for i in z_t:
+        if i[0] == s:
+            idx = z_t.index(i)
+            z_n[idx] = 1
+    return z_n
