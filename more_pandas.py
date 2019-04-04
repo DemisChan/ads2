@@ -1,6 +1,5 @@
 """This exercise contains functions where you need to use pandas to build new columns from existing ones."""
 import pandas as pd
-import numpy as np
 
 
 def diff_in_days(df):
@@ -135,4 +134,3 @@ def return_post_codes(df):
             t.append(z.pop())
     df_pc = pd.DataFrame(t, columns=['postcodes'])
     return df_pc
-
