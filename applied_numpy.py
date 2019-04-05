@@ -47,6 +47,7 @@ def moving_averages(x, k):
     :returns: a numpy array z containing the moving averages.
     """
     import pandas as pd
+    import numpy as np
     df = pd.DataFrame({'vector':x})
     df_r = df.rolling(window = k).mean()
     z = np.array(df_r.dropna())
