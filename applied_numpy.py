@@ -76,6 +76,9 @@ def block_matrix(A, B):
     :returns: a numpy array with A and B on the diagonal.
     """
 
-    raise NotImplementedError
-
+    import numpy as np
+    z_ro = np.zeros((2*a.shape[0],2*a.shape[1]))
+    z_ro[:a.shape[0], :a.shape[0]] = A
+    z_ro[a.shape[0]:, a.shape[0]:] = b
+    return z_ro 
 
