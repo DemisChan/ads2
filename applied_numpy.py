@@ -46,18 +46,12 @@ def moving_averages(x, k):
     :param k: length of the moving average
     :returns: a numpy array z containing the moving averages.
     """
-    #import pandas as pd
-    #import numpy as np
-    #df = pd.DataFrame({'vector': x})
-    #df_r = df.rolling(window=k).mean()
-    #z = np.array(df_r.dropna())
-    #return z.squeeze()
+    import pandas as pd
     import numpy as np
-    z_s = np.cumsum(x, dtype=float)
-    #print(z_s)
-    z_s[k:] = z_s[k:] - z_s[:-k]
-    #print(z_s)
-    return z_s[k-1:]/k
+    df = pd.DataFrame({'vector': x})
+    df_r = df.rolling(window=k).mean()
+    z = np.array(df_r.dropna())
+    return z.squeeze()
 
 
 def block_matrix(A, B):
