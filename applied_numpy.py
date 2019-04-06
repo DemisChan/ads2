@@ -20,7 +20,16 @@ def build_sequences(min_value, max_value, sequence_number):
     :returns: the right sequence as a np.array
     """
 
-    raise NotImplementedError
+    n = np.arange(start=min_value, stop=max_value)
+    if sequence_number == 1:
+        s_1 = 2 * n + 1
+        return s_1
+    elif sequence_number == 2:
+        s_2 = 50 - 5 * n
+        return s_2
+    else:
+        s_3 = 2 ** n
+        return s_3
 
 
 def moving_averages(x, k):
