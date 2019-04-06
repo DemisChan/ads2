@@ -75,10 +75,11 @@ def block_matrix(A, B):
     :param B: numpy array
     :returns: a numpy array with A and B on the diagonal.
     """
-
     import numpy as np
-    z_ro = np.zeros((2*A.shape[0],2*A.shape[1]))
-    z_ro[:A.shape[0], :A.shape[0]] = A
-    z_ro[A.shape[0]:, A.shape[0]:] = B
-    return z_ro 
+    rows = [A.shape[0], B.shape[0]]
+    columns = [A.shape[1], B.shape[1]]
+    zero = np.zeros((sum(rows), sum(columns)))
+    zero[:A.shape[0], :A.shape[1]] = A
+    zero[-B.shape[0]:, -B.shape[1]:] = B
+    return zero
 
