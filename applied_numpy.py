@@ -65,8 +65,8 @@ def moving_averages(x, k):
     import numpy as np
     df = pd.DataFrame({'vector': x})
     df_r = df.rolling(window=k).mean()
-    z = np.array(df_r.dropna())
-    return z.squeeze()
+    z_z = np.array(df_r.dropna())
+    return z_z.squeeze()
 
 
 def block_matrix(A, B):
@@ -97,4 +97,3 @@ def block_matrix(A, B):
     zero[:A.shape[0], :A.shape[1]] = A
     zero[-B.shape[0]:, -B.shape[1]:] = B
     return zero
-
