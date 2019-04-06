@@ -20,15 +20,21 @@ def build_sequences(min_value, max_value, sequence_number):
     :returns: the right sequence as a np.array
     """
     import numpy as np
-    n = np.arange(start=min_value, stop=max_value)
+    n = np.arange(0, 50)
     if sequence_number == 1:
         s_1 = 2 * n + 1
+        s_1 = s_1[s_1 >= min_value]
+        s_1 = s_1[s_1 <= max_value]
         return s_1
     elif sequence_number == 2:
         s_2 = 50 - 5 * n
+        s_2 = s_2[s_2 >= min_value]
+        s_2 = s_2[s_2 <= max_value]
         return s_2
     else:
         s_3 = 2 ** n
+        s_3 = s_3[s_3 >= min_value]
+        s_3 = s_3[s_3 <= max_value]
         return s_3
 
 
