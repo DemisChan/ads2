@@ -77,8 +77,8 @@ def block_matrix(A, B):
     """
 
     import numpy as np
-    z_ro = np.zeros((2*a.shape[0],2*a.shape[1]))
-    z_ro[:a.shape[0], :a.shape[0]] = A
-    z_ro[a.shape[0]:, a.shape[0]:] = b
+    z_ro = np.zeros((2*A.shape[0],2*A.shape[1]))
+    z_ro[:A.shape[0], :A.shape[0]] = A
+    z_ro[A.shape[0]:, A.shape[0]:] = B
     return z_ro 
 
