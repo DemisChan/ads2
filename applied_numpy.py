@@ -19,7 +19,7 @@ def build_sequences(min_value, max_value, sequence_number):
     :param sequence_number: number of the sequence to return
     :returns: the right sequence as a np.array
     """
-
+    import numpy as np
     n = np.arange(start=min_value, stop=max_value)
     if sequence_number == 1:
         s_1 = 2 * n + 1
